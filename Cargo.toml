@@ -1,0 +1,28 @@
+cargo-features = ["strip"]
+
+[package]
+name = "x"
+version = "1.0.0-beta.1"
+edition = "2021"
+description = "Project scripts runner"
+repository = "https://github.com/Unoqwy/x.rs"
+license = "MIT"
+keywords = ["command-line-utilities", "development-tools"]
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_yaml = "0.8"
+kdl = "3.0"
+is_executable = "1.0"
+
+[[bin]]
+name = "x"
+
+[badges]
+maintenance = { status = "experimental" }
+
+[profile.release]
+opt-level = "z"
+panic = "abort"
+lto = true
+strip = true

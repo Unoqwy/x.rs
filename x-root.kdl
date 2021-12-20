@@ -1,0 +1,17 @@
+scripts {
+    script "install" {
+        run "cargo install --path ." cwd="."
+    }
+}
+
+/* Examples */
+
+hoist {
+    directory "examples"
+}
+
+scripts {
+    script "keep-pwd" {
+        run "echo $PWD"
+    }
+}
